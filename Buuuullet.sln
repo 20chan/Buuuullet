@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buuuullet", "Buuuullet\Buuuullet\Buuuullet.csproj", "{3CFD7A10-DBEF-4671-AED5-333BD15B3D5F}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "BuuuulletContent", "Buuuullet\BuuuulletContent\BuuuulletContent.contentproj", "{2842252E-EAF5-42F6-8239-A4B10F888DBF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CFD7A10-DBEF-4671-AED5-333BD15B3D5F}.Debug|x86.ActiveCfg = Debug|x86
+		{3CFD7A10-DBEF-4671-AED5-333BD15B3D5F}.Debug|x86.Build.0 = Debug|x86
+		{3CFD7A10-DBEF-4671-AED5-333BD15B3D5F}.Release|x86.ActiveCfg = Release|x86
+		{3CFD7A10-DBEF-4671-AED5-333BD15B3D5F}.Release|x86.Build.0 = Release|x86
+		{2842252E-EAF5-42F6-8239-A4B10F888DBF}.Debug|x86.ActiveCfg = Debug|x86
+		{2842252E-EAF5-42F6-8239-A4B10F888DBF}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

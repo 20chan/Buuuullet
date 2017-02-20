@@ -16,6 +16,9 @@ namespace Buuuullet
 
         public float Speed { get; set; } = 1f;
 
+        private float _elapsed = 0;
+        public float ShootGap = 5;
+
         public Player(Game game, SpriteBatch sb) : base(game, sb)
         {
             Bullets = new List<PlayerBullet>();
@@ -43,7 +46,11 @@ namespace Buuuullet
             MoveTo(x, y, spd);
 
             if (Keyboard.GetState().IsKeyDown(Keys.Space))
-                Shoot();
+                if (_elapsed == 0)
+                {
+                    Shoot();
+                    _elapsed++;
+                }
 
             for(int i = Bullets.Count - 1; i >= 0; i--)
             {
@@ -55,6 +62,11 @@ namespace Buuuullet
                     Bullets.RemoveAt(i);
                 }
             }
+
+            if(_elapsed > 0)
+                _elapsed++;
+            if (_elapsed > ShootGap)
+                _elapsed = 0;
         }
 
         public override void Draw(GameTime gameTime)

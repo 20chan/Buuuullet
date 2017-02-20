@@ -17,6 +17,7 @@ namespace Buuuullet
         SpriteBatch spriteBatch;
 
         Player player;
+        ChaseBullet bullet;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -35,8 +36,18 @@ namespace Buuuullet
             player.Sprite = Content.Load<Texture2D>("player");
             player.Speed = 3f;
             player.Scale = 0.5f;
+            player.Location = new Vector2(400, 300);
             player.BulletTexture = Content.Load<Texture2D>("playerbullet");
             player.WorldRect = new Rectangle(0, 0, Window.ClientBounds.Width, Window.ClientBounds.Height);
+
+            bullet = new ChaseBullet(this, spriteBatch);
+            bullet.Sprite = Content.Load<Texture2D>("enemyBullet");
+            bullet.Speed = 1f;
+            bullet.Torque = 1f;
+            bullet.Target = player;
+            bullet.Location = new Vector2(100, 100);
+
+            bullet.Initialize();
         }
 
         protected override void UnloadContent()
@@ -50,6 +61,8 @@ namespace Buuuullet
                 this.Exit();
 
             player.Update(gameTime);
+            bullet.Update(gameTime);
+            Window.Title = $"{bullet.Location.X}, {bullet.Location.Y}, {bullet.Angle}";
             
             base.Update(gameTime);
         }
@@ -60,6 +73,7 @@ namespace Buuuullet
 
             spriteBatch.Begin();
             player.Draw(gameTime);
+            bullet.Draw(gameTime);
             spriteBatch.End();
             
             base.Draw(gameTime);

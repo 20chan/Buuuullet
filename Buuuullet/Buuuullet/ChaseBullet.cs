@@ -36,6 +36,8 @@ namespace Buuuullet
             _direction.Normalize();
             Angle = angle;
             Location += _direction * Speed;
+
+            //HACK: 각이 90도 이상이 되면 미쳐버림!!!
         }
     }
 }
